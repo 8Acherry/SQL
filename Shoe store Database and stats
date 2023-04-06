@@ -1,0 +1,23 @@
+-- Create A Shoe store datebase 
+CREATE TABLE shoe (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, gender text,price INTEGER);
+
+INSERT INTO shoe VALUES (1, "Nike", 3,"Men",12);
+INSERT INTO shoe VALUES (2, "Nike", 5,"women",9);
+INSERT INTO shoe VALUES (3, "Nike", 8,"women",7);
+INSERT INTO shoe VALUES (4, "Nike", 7,"women",6);
+INSERT INTO shoe VALUES (5, "Nike", 3,"women",3);
+INSERT INTO shoe VALUES (6, "Nike", 1,"women",10);
+INSERT INTO shoe VALUES (7, "Nike", 5,"Men",7);
+INSERT INTO shoe VALUES (8, "Nike", 9,"Men",8);
+INSERT INTO shoe VALUES (9, "Adidas", 8,"women",5);
+INSERT INTO shoe VALUES (10, "Adidas", 0,"women",8);
+INSERT INTO shoe VALUES (11, "Adidas", 1,"women",13);
+INSERT INTO shoe VALUES (12, "Adidas", 2,"women",8);
+INSERT INTO shoe VALUES (13, "Adidas", 5,"women",12);
+INSERT INTO shoe VALUES (14, "Adidas", 9,"women",6);
+INSERT INTO shoe VALUES (15, "Adidas", 5,"women",11);
+---what is the max dollars paid for shoe
+SELECT MAX(price) as most_dollars_paid
+    FROM shoe;
+--display the database order by quatity
+    SELECT * FROM shoe ORDER BY quantity;
