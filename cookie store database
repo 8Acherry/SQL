@@ -1,0 +1,23 @@
+--Create a cookie store database 
+Create table cookies (id integer primary key, name text, quantity integer, price real, sales integer);
+
+insert into cookies values (1,"cherry",12,3.50,5);
+insert into cookies values (2,"blueberry",4,5,9);
+insert into cookies values (3,"mago",16,10,2);
+insert into cookies values (4,"grape",4,2,5);
+insert into cookies values (5,"peach",17,4,9);
+insert into cookies values (6,"straw",8,2.50,1);
+insert into cookies values (7,"water",16,7,12);
+insert into cookies values (8,"pear",4,3.50,5);
+insert into cookies values (9,"lime",6,1,5);
+insert into cookies values (10,"lemon",11,1,9);
+insert into cookies values (11,"chip",18,5.50,2);
+insert into cookies values (12,"drango",2,3.54,2);
+insert into cookies values (13,"apple",15,4,6);
+insert into cookies values (14,"banna",7,8,3);
+insert into cookies values (15,"kwie",6,5.55,8);
+
+--displaye the database where the price of the cookies where less than 1o dollor.
+SELECT * FROM cookies WHERE price < 10 ORDER BY price DESC;
+-- what is the sum of price of the items in the bilk setion?
+select sum(price) from cookies
