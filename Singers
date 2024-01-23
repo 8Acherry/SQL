@@ -1,0 +1,41 @@
+/*Singers:
+SZA,R&B,Snooze
+Drake,Hip-Hop,Take Care 
+Taylor Sift ,POP,Speak Now
+Summer Walker, R&B,Karma
+21Savage,Hip-Hop,American Dream
+Victoria Monet,Pop,On My Mama*/
+
+-----What songs did they write?
+CREATE TABLE singers (id INTEGER PRIMARY KEY,name TEXT, genre TEXT,song TEXT);
+
+INSERT INTO singers VALUES (1,"SZA","R&B","Snooze");
+INSERT INTO singers VALUES (2,"Drake","Hip-Hop","Take Care" );
+INSERT INTO singers VALUES (3,"Taylor Swift ","POP","Speak Now" );
+INSERT INTO singers VALUES (4,"Summer Walker", "R&B","Karma" );
+INSERT INTO singers VALUES (5,"21Savage","Hip-Hop","American Dream" );
+INSERT INTO singers VALUES (6,"Victoria Monet","Pop","On My Mama");
+
+
+
+-----Where are they from?
+CREATE TABLE singers_home (id INTEGER PRIMARY KEY,singers_name TEXT,state Text);
+INSERT INTO singers_home VALUES (1,"SZA","New Jersey");
+INSERT INTO singers_home VALUES (2,"Drake","Totonto" );
+INSERT INTO singers_home VALUES (3,"Taylor Swift","Philly");
+INSERT INTO singers_home VALUES (4,"Summer Walker", "Atlanta");
+INSERT INTO singers_home VALUES (5,"21Savage","Atlanta");
+INSERT INTO singers_home VALUES (6,"Victoria Monet","Atlanta");
+
+---- The name of the Singers and where they are form.
+SELECT singers.name, singers_home.state
+FROM singers
+LEFT OUTER JOIN singers_home
+ON singers.id= singers_home.id;
+
+--- What singers are in Atlanat and what there Genre of music
+SELECT singers.genre ,singers_home.state,singers_name 
+FROM singers
+LEFT OUTER JOIN singers_home
+ON singers.id= singers_home.id
+WHERE singers_home.state = "Atlanta";
